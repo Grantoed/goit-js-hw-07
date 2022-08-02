@@ -3,6 +3,12 @@
   --animation-duration: 250ms;
 }
 
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .gallery {
   display: grid;
   max-width: 1140px;
@@ -37,6 +43,7 @@
   display: block;
   text-decoration: none;
   height: 100%;
+  cursor: none;
 }
 
 .gallery__link:hover {
