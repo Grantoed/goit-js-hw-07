@@ -21,13 +21,18 @@ function onImageClick(evt) {
   }
 
   evt.preventDefault();
-  const instance = basicLightbox.create(`
+
+  const instance = basicLightbox.create(
+    `
     <img src="${srcOriginal}" width="800" height="600">
-`);
+`,
+    {
+      onShow: () => window.addEventListener("keydown", onEscPress),
+      onClose: () => window.removeEventListener("keydown", onEscPress),
+    }
+  );
 
   instance.show();
-
-  window.addEventListener("keydown", onEscPress);
 
   function onEscPress(evt) {
     if (evt.key === "Escape") {
